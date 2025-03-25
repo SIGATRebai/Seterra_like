@@ -1,2 +1,2 @@
-# Seterra_like
+# Seterra like
 For Webmapping !
