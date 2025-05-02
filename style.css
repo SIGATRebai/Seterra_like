@@ -1,0 +1,531 @@
+/* ==================== RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://raw.githubusercontent.com/SIGATRebai/Seterra_like/de1bef24e2a750de31fe107ef149a8d0bf2079da/fond_test_image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* ==================== NAVBAR ==================== */
+.flex-nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+.flex-nav ul {
+    background-color: #e7d7b3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px 15px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #191919;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* ==================== CONTENT ==================== */
+.content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.info {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+}
+
+.info h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* ==================== Selecteur ==================== */
+.quiz-container {
+    margin-top: 120px;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 40px;
+}
+
+.sidebar {
+    width: 100%;
+    max-width: 1300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+    text-align: center; 
+}
+
+.sidebar h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.sidebar select, .sidebar button {
+    max-width: 300px;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.sidebar select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #b29044;
+  border-radius: 12px;
+  padding: 12px 40px 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(195, 165, 99, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23b29044" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px 16px;
+}
+
+/* Hover et focus */
+.sidebar select:hover,
+.sidebar select:focus {
+  border-color: #ff6a36;
+  box-shadow: 0 4px 15px rgba(255, 106, 54, 0.6);
+  outline: none;
+}
+
+/* Spécifique à l'option "Tous les continents" */
+.sidebar select option[value="all"] {
+  background-color: white;
+  color: #555;
+  font-weight: 400;
+}
+
+/* Autres options */
+.sidebar select option:not([value="all"]) {
+  background-color: #f7f1d1; /* couleur douce dorée claire */
+  color: #b29044; /* couleur dorée */
+  font-weight: 600;
+}
+
+/* Pour masquer la flèche native sur IE */
+.sidebar select::-ms-expand {
+  display: none;
+}
+
+.sidebar button {
+    background: linear-gradient(135deg, #c3a563, #b29044);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff6a36, #fd934e);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.sidebar select:hover {
+    transform: scale(1.03);
+}
+
+/* ==================== BUBBLES ==================== */
+.sidebarbis {
+    display: flex;
+    justify-content: center;
+}
+
+.info-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px; 
+}
+
+.bubble {
+    background: linear-gradient(145deg, #fcf5e6, #e7d7b3);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bubble:hover {
+    transform: scale(1.2);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    background: linear-gradient(145deg, #e7d7b3, #c3a563);
+}
+
+.info-bubbles:has(.bubble:hover) .bubble:not(:hover) {
+    transform: scale(0.8);
+    filter: brightness(0.8);
+    opacity: 0.8;
+}
+
+.bubble-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: black;
+    margin-bottom: 4px;
+}
+
+.bubble-value {
+    font-weight: 500;
+    font-size: 16px;
+    color: #00000;
+}
+
+#bubble-timer, #bubble-clicks {
+    width: 70px;
+    height: 70px;
+    margin-top: 100px;
+}
+
+#bubble-remaining, #bubble-success {
+    width: 150px;
+    height: 150px;
+}
+
+/* ==================== MAP ==================== */
+#map {
+    width: 80%;
+    max-width: 1500px; 
+    height: 90vh;
+    min-height: 500px;
+    margin: 20px auto;
+    border: 3px solid #fcf5e6;
+    border-radius: 10px;
+}
+
+
+.leaflet-control-zoom {
+    top: auto;
+    bottom: 65px;
+    left: auto;
+    right: 15px;
+    z-index: 5;
+}
+
+/* ==================== POPUPS ==================== */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.leaflet-popup-close-button {
+    display: none;
+}
+
+.popup-container {
+    position: relative;
+    width: 150px;
+    height: 180px;
+}
+
+/* CERCLE qui contient l'image */
+.popup-circle {
+    position: absolute;
+    top: 79px; /* Décalé vers le bas pour laisser place au texte */
+    left: 27px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* L'image dans le cercle */
+.popup-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Texte en haut */
+.popup-text-svg {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    height: 130px;
+    pointer-events: none;
+}
+
+.popup-text-svg text {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    fill: black;
+}
+
+/* Flèche sous le cercle */
+.popup-arrow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid black;
+}
+
+/* ==================== SIDEBAR2 QUIZ ==================== */
+.quiz2-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.sidebar2 {
+    position: absolute;
+    top: 700px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(231, 215, 179, 0.9);
+    color: #010b09;
+    padding: 25px;
+    display: flex;
+    flex-direction: row; /* S'assurer que les éléments sont en ligne */
+    align-items: center;
+    justify-content: space-evenly; /* Ajouté pour espacer les éléments uniformément */
+    gap: 20px; /* Ajouté pour espacer les éléments */
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes si nécessaire */
+    border-radius: 200px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    border: 2px solid transparent;
+    animation: borderGlow 3s infinite alternate;
+    z-index: 500;
+}
+
+@keyframes borderGlow {
+    0% { border-color: #fcf5e6; box-shadow: 0 0 10px #fcf5e6; }
+    100% { border-color: #fcf5e6; box-shadow: 0 0 14px #fcf5e6; }
+}
+
+.sidebar2 h2 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.target {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.glow-button {
+    background: #c3a563;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.glow-button:hover {
+    background: #b89d54;
+    transform: scale(1.05);
+}
+
+/* ==================== FORM ==================== */
+.email-form {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.email-form input, .email-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.email-form button {
+    padding: 0.5rem 1rem;
+    background-color: #c3a563;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.email-form button:hover {
+    background-color: #b89d54;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    position: relative;
+    bottom: 10px;
+    right: 20px;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1200px) {
+    .sidebar, .sidebar2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    #map {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar h2, .sidebar2 h2 {
+        font-size: 20px;
+    }
+
+    .bubble {
+        width: 70px;
+        height: 70px;
+    }
+
+    #bubble-remaining, #bubble-success {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quiz-container {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar h2, .sidebar2 h2 {
+        font-size: 18px;
+    }
+
+    .bubble {
+        width: 60px;
+        height: 60px;
+    }
+
+    .content {
+        margin-top: 80px;
+    }
+
+    #map {
+        width: 95%;
+        height: 400px;
+    }
+}

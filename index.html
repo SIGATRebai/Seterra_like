@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess That Monu !</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  
+  <!-- Mapbox GL CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+
+  <!-- Leaflet et Mapbox GL JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script src="https://unpkg.com/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+        <!-- Barre de navigation -->
+        <div class="flex-nav-wrapper">
+            <div class="flex-nav">
+                <ul>
+                    <img src="https://raw.githubusercontent.com/SIGATRebai/Seterra_like/main/Logo.png" id="header-img" class="logo">
+
+                    <nav id="nav-bar">
+                        <div class="nav-links">
+                            <li><a href="#infoquiz" class="nav-link">C'est quoi ce jeu ?</a></li>
+                            <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                            <li><a href="#about" class="nav-link">À propos de nous</a></li>
+                            <li><a href="#contact" class="nav-link">Contact</a></li>
+                        </div>
+                    </nav>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="content">
+
+            <!-- Section d'introduction -->
+            <div class="info" id="infoquiz">
+                <h1>Le quiz des Monuments et Merveilles Naturelles</h1>
+                <p>Testez vos connaissances en localisant 100 sites célèbres et merveilles naturelles sur la carte.
+Envie de vous concentrer ? Sélectionnez une zone géographique et partez à l'aventure !</p>
+                <p>Ce jeu s'inspire de Seterra, un jeu flash du même acabit. Et utilise des images illustratives issues d'images distribués par des contributeurs sur wikipédia et google map.</p>
+                <div class="sidebar">
+                  <label for="level">Niveau</label>
+                  <button id="str-btn" class="glow-button">Commencer</button>
+                </div>
+                <div class="sidebarbis">
+                  <div class="info-bubbles">
+                      <div class="bubble" id="bubble-timer">
+                        <span class="bubble-title">Temps</span>
+                        <span class="bubble-value">00:00</span>
+                      </div>
+                      <div class="bubble" id="bubble-remaining">
+                        <span class="bubble-title">Restants</span>
+                        <span class="bubble-value">0</span>
+                      </div>
+                      <div class="bubble" id="bubble-success">
+                        <span class="bubble-title">Réussite</span>
+                        <span class="bubble-value">0%</span>
+                      </div>
+                      <div class="bubble" id="bubble-clicks">
+                        <span class="bubble-title">Clics</span>
+                        <span class="bubble-value">3</span>
+                      </div>
+                  </div>
+                </div>
+
+            <!-- Section monument à trouver -->
+            <div class="quiz2-container2" id="quiz2">
+              <div class="sidebar2">
+                <div class="sidebar2-header">
+                  <h2>Trouvez ce monument : </h2>
+                  <p class="target" id="monument-container">
+                    <span id="target-monument">Chargement...</span>
+                  </p>
+                  <button id="next-btn" class="glow-button">Suivant</button>
+                </div>
+              </div>
+              <div id="map"></div>
+            </div>
+
+          
+            <!-- Section Info nous -->
+            <div class="info" id="about">
+                <h1>Master SIGAT</h1>
+                <p>Nous sommes des étudiants en deuxième année de master SIGAT à Rennes 2 qui avons créer ce petit jeu pour paufiner notre apprentissage du webmapping. Trouver la T211 et vous pourrez admirer les magnifiques créateurs de ce chef d'oeuvre !</p>
+            </div>
+          
+            <!-- Formulaire de contact -->
+            <div class="email-form" id="contact">
+              <form action="https://formspree.io/f/xgvkaezo" method="POST">
+                  <h2>Nous contacter :</h2>
+                  <input type="email" name="email" placeholder="Votre email" required>
+                  <textarea name="message" placeholder="Votre message" required></textarea>
+                  <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+                      
+ <footer>
+    <p>Image de fond fournie par <a href="https://fr.freepik.com/photos-gratuite/beau-cliche-du-celebre-amphitheatre-du-colisee-romain-sous-ciel-couper-souffle-au-lever-du-soleil_8981252.htm#fromView=keyword&page=1&position=0&uuid=c8916822-464a-4d24-bc26-0723b03febed&query=Colisee" target="_blank">@wirestock sur Freepik</a></p>
+</footer>
+  
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
